@@ -57,5 +57,4 @@ This project explores simulated gameplay data to analyze player behavior, uncove
 - Deploy a real-time churn detection dashboard using Streamlit or Power BI  
 - Incorporate NLP to analyze player chat/emotion sentiment
 
-## 📂 Repository Structure
 
