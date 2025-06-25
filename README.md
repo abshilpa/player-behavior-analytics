@@ -1,60 +1,74 @@
 # player-behavior-analytics
 
-# 🎮 Player Behavior Analysis & Churn Prediction in Online Multiplayer Game
+# 🎮 Player Behavior Analysis & Engagement Prediction
 
-This project explores simulated gameplay data to analyze player behavior, uncover key engagement patterns, and build predictive models to identify potential churn. Inspired by the types of analytics used in the gaming industry, especially at companies like Rockstar Games, the project demonstrates how data-driven insights can help enhance player retention and gameplay experience.
+This project explores online player behavior using a synthetic dataset that simulates real-world gaming environments. We analyze player engagement, uncover behavioral segments using clustering, and build predictive models to forecast engagement levels. 
 
-## 📊 Project Overview
+## 📌 Overview
 
-- **Dataset:** Synthetic dataset simulating ~10,000 multiplayer player sessions
-- **Tech Stack:** Python, Pandas, NumPy, Seaborn, Scikit-learn, Matplotlib, SQL
-- **Goal:** Understand behavioral clusters and predict player churn using machine learning
+- 🔍 Behavioral segmentation of players using **K-Means clustering**
+- 🧠 Predictive modeling of player **EngagementLevel** (High, Medium, Low)
+- 📊 Feature importance analysis to guide game design and retention strategies
+- 💻 Tools: Python, Pandas, Seaborn, Scikit-learn, PCA, Random Forest
 
-## 🧠 Key Objectives
+---
 
-- Analyze in-game event logs to extract behavior patterns
-- Cluster players based on session frequency, playstyle, and achievements
-- Predict potential churners using classification models
-- Visualize insights to drive game design and retention strategies
+## 📂 Dataset
 
-## 🔍 Exploratory Data Analysis (EDA)
+**Source:** [Kaggle - Predict Online Gaming Behavior](https://www.kaggle.com/datasets)  
+**Size:** 40,034 rows × 13 columns  
+**Key Features:**
 
-- Analyzed features such as `session_count`, `average_session_length`, `level_retries`, `achievement_unlocks`, `in-game purchases`, and `last_login`.
-- Discovered engagement drop-off around specific game levels.
-- Identified peak activity hours and platform-specific trends (PC vs Console).
+- `PlayTimeHours`, `SessionsPerWeek`, `AvgSessionDurationMinutes`
+- `AchievementsUnlocked`, `GameDifficulty`, `InGamePurchases`
+- `EngagementLevel` (Target): High, Medium, Low
 
-## 🤖 Machine Learning Models
+---
 
-- **Clustering:** Used K-Means and DBSCAN to segment players into behavioral cohorts (e.g., “Hardcore”, “Casual”, “At-Risk”).  
-- **Classification Models:** 
-  - Logistic Regression
-  - Random Forest
-  - XGBoost  
-- **Performance:** Achieved up to **85% accuracy** in predicting churn risk. Tuned models with cross-validation and grid search.
+## 📊 Exploratory Data Analysis (EDA)
 
-## 📈 Visualizations
+- Distribution of engagement levels shows class imbalance skewed toward “Low” engagement
+- Key patterns discovered between session frequency, duration, and achievement unlocking
+- Categorical features like `Gender`, `GameGenre`, and `Location` were label-encoded
 
-- Session heatmaps  
-- Engagement funnels  
-- Churn risk distributions  
-- Cluster visualizations using PCA/t-SNE
+---
 
-## 📌 Results & Recommendations
+## 🔍 Clustering Player Types
 
-- Identified ~18% of players with high churn probability based on recent inactivity, low achievements, and repeated failures.  
-- Suggested in-game incentives (bonus levels, in-game currency) to re-engage at-risk players.  
-- Recommended dynamic difficulty adjustment for frustration-prone segments.
+- Applied **K-Means** with `n_clusters=3`
+- Used **PCA** to reduce feature space for 2D visualization
+- Identified three player segments:
+  - **Cluster 0:** Casual Players  
+  - **Cluster 1:** Completionists  
+  - **Cluster 2:** Consistent Engagers
 
-## 💡 Takeaways
+---
 
-- Player behavioral data provides immense value in improving retention and satisfaction.
-- Clustering and churn prediction can inform personalized game experiences.
-- Strong alignment with data science roles in the gaming industry, such as at Rockstar Games.
+## 🤖 Engagement Prediction (Supervised Learning)
 
-## 🔧 Future Work
+### Model: Random Forest Classifier
 
-- Integrate time-series analysis for session progression trends  
-- Deploy a real-time churn detection dashboard using Streamlit or Power BI  
-- Incorporate NLP to analyze player chat/emotion sentiment
+- **Accuracy:** `91%`
+- **Classification Report:**
+  - F1-score: High (0.90), Medium (0.89), Low (0.93)
+- **Feature Importance:**
+  - Top predictors: `SessionsPerWeek`, `AvgSessionDurationMinutes`, `PlayTimeHours`
+
+---
+
+## 🧠 Key Takeaways
+
+- High session frequency and longer session durations strongly correlate with higher engagement.
+- Machine learning models can effectively predict player behavior and inform in-game design.
+- Cluster analysis provides valuable segmentation for targeted retention strategies.
+
+---
+
+## 🛠️ Tools & Technologies
+
+- Python, Pandas, NumPy, Seaborn, Matplotlib
+- Scikit-learn (Random Forest, KMeans, PCA, LabelEncoder, StandardScaler)
+- Jupyter Notebooks
+
 
 
