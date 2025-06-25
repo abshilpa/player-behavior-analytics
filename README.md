@@ -1,5 +1,3 @@
-# player-behavior-analytics
-
 # 🎮 Player Behavior Analysis & Engagement Prediction
 
 This project explores online player behavior using a synthetic dataset that simulates real-world gaming environments. We analyze player engagement, uncover behavioral segments using clustering, and build predictive models to forecast engagement levels. 
